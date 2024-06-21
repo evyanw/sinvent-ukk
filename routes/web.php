@@ -8,9 +8,7 @@ Route::get('/', function () {
  return view('login');
 });
 
-Route::resource('/products', \App\Http\Controllers\ProductController::class); 
-
-Route::resource('/kategori', \App\Http\Controllers\KategoriController::class); 
+Route::resource('/kategori', \App\Http\Controllers\KategoriController::class)->middleware('auth'); 
 
 Route::resource('/dashboard', \App\Http\Controllers\DashboardController::class)->middleware('auth'); 
 
